@@ -29,7 +29,7 @@ export function lowerSnakeCase(s: string): string {
   for (let i = 0; i < s.length; i++) {
     const c = s[i];
 
-    if (!isAlphanumeric(c) && (i > 0 || i < s.length - 1)) {
+    if (!isAlphanumeric(c) && output.length && i < s.length - 1) {
       const next = s[i + 1];
 
       if (isAlphanumeric(next)) {

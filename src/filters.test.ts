@@ -18,4 +18,6 @@ test('lowerSnakeCase', () => {
   expect(lowerSnakeCase('--my-string--like---this--')).toBe(
     'my_string_like_this'
   );
+
+  expect(lowerSnakeCase('My  string__like-this**')).toBe('my_string_like_this');
 });
