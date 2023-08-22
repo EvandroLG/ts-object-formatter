@@ -22,14 +22,14 @@ function applyFilter(key: string, filter: FilterType): string {
   return result;
 }
 
-function objectTransformer(obj: ObjectType, filter: FilterType) {
+function objectFormatter(obj: ObjectType, filter: FilterType) {
   const keys = Object.keys(obj);
   const output: ObjectType = {};
 
   for (const key of keys) {
     const newKey = applyFilter(key, filter);
     const value = isObject(obj[key])
-      ? objectTransformer(obj[key] as ObjectType, filter)
+      ? objectFormatter(obj[key] as ObjectType, filter)
       : obj[key];
 
     output[newKey] = value;
@@ -38,4 +38,4 @@ function objectTransformer(obj: ObjectType, filter: FilterType) {
   return output as ObjectType;
 }
 
-export default objectTransformer;
+export default objectFormatter;
