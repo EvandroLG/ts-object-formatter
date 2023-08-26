@@ -10,8 +10,8 @@
     "default": "./dist/index.modern.js"
   },
   "main": "./dist/index.cjs",
-  "module": "./dist/index.modern.mjs",
-  "umd:main": "./dist/index.umd.js",
+  "module": "./dist/index.module.mjs",
+  "unpkg": "./dist/index.umd.js",
   "typings": "./dist/index.d.ts",
   "scripts": {
     "size": "npm run build && size-limit",
@@ -27,7 +27,11 @@
       "limit": "420 B"
     },
     {
-      "path": "./dist/index.modern.mjs",
+      "path": "./dist/index.modern.js",
+      "limit": "370 B"
+    },
+    {
+      "path": "./dist/index.module.mjs",
       "limit": "370 B"
     },
     {
