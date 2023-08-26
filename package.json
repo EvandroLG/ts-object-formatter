@@ -1,21 +1,50 @@
 {
-  "name": "object-transformer",
+  "name": "ts-object-transformer",
   "version": "1.0.0",
+  "author": "evandrolg",
+  "license": "MIT",
+  "description": "A tiny library for formatting object fields in snake case or camel case.",
   "type": "module",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest"
+  "exports": {
+    "require": "./dist/index.cjs",
+    "default": "./dist/index.modern.js"
   },
-  "author": "",
-  "license": "ISC",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.modern.mjs",
+  "umd:main": "./dist/index.umd.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "size": "npm run build && size-limit",
+    "test": "jest",
+    "lint": "eslint src/",
+    "build": "./scripts/build.sh",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build"
+  },
+  "size-limit": [
+    {
+      "path": "./dist/index.cjs",
+      "limit": "420 B"
+    },
+    {
+      "path": "./dist/index.modern.mjs",
+      "limit": "370 B"
+    },
+    {
+      "path": "./dist/index.umd.js",
+      "limit": "460 B"
+    }
+  ],
   "devDependencies": {
     "@babel/preset-env": "^7.22.10",
     "@babel/preset-typescript": "^7.22.5",
+    "@size-limit/preset-small-lib": "^8.2.6",
     "@types/jest": "^29.5.3",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.4.0",
     "eslint": "^8.47.0",
+    "husky": "^8.0.3",
+    "microbundle": "^0.15.1",
     "prettier": "^3.0.2",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
