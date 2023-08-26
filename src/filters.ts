@@ -2,6 +2,10 @@ function isAlphanumeric(s: string): boolean {
   return /[A-Za-z0-9]/.test(s);
 }
 
+function isUpperCase(s: string): boolean {
+  return s.toUpperCase() === s;
+}
+
 export function lowerCamelCase(s: string): string {
   const output: Array<string> = [];
 
@@ -28,14 +32,17 @@ export function lowerSnakeCase(s: string): string {
 
   for (let i = 0; i < s.length; i++) {
     const c = s[i];
+    const isInBoundaries = output.length && i < s.length - 1;
 
-    if (!isAlphanumeric(c) && output.length && i < s.length - 1) {
+    if (!isAlphanumeric(c) && isInBoundaries) {
       const next = s[i + 1];
 
       if (isAlphanumeric(next)) {
         output.push('_', next);
         i++;
       }
+    } else if (isUpperCase(c) && isInBoundaries) {
+      output.push('_', c);
     } else if (isAlphanumeric(c)) {
       output.push(c);
     }
