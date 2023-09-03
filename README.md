@@ -39,7 +39,7 @@ objectFormatter(map, 'lower_camel_case');
 
 ## API
 
-### objectFormatter
+### objectFormatter(object, filter)
 
 Converts the object keys to camel or snake case.
 
