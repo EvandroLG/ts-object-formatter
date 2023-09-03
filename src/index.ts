@@ -1,7 +1,7 @@
-import { lowerCamelCase, lowerSnakeCase } from './filters';
+import { lowerCamelCase, lowerSnakeCase, upperSnakeCase } from './filters';
 
 type ObjectType = { [key: string]: unknown };
-type FilterType = 'lower_camel_case' | 'lower_snake_case';
+type FilterType = 'lower_camel_case' | 'lower_snake_case' | 'upper_snake_case';
 
 function isObject(o: unknown): boolean {
   return typeof o === 'object' && !Array.isArray(o);
@@ -16,6 +16,9 @@ function applyFilter(key: string, filter: FilterType): string {
       break;
     case 'lower_snake_case':
       result = lowerSnakeCase(key);
+      break;
+    case 'upper_snake_case':
+      result = upperSnakeCase(key);
       break;
   }
 

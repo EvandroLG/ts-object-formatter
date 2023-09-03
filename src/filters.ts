@@ -27,12 +27,12 @@ export function lowerCamelCase(s: string): string {
   return output.join('');
 }
 
-export function lowerSnakeCase(s: string): string {
+function baseSnakeCase(s: string): string {
   const output: Array<string> = [];
 
   for (let i = 0; i < s.length; i++) {
-    const c = s[i];
     const isInBoundaries = output.length && i < s.length - 1;
+    const c = s[i];
 
     if (!isAlphanumeric(c) && isInBoundaries) {
       const next = s[i + 1];
@@ -48,5 +48,13 @@ export function lowerSnakeCase(s: string): string {
     }
   }
 
-  return output.join('').toLowerCase();
+  return output.join('');
+}
+
+export function lowerSnakeCase(s: string): string {
+  return baseSnakeCase(s).toLowerCase();
+}
+
+export function upperSnakeCase(s: string): string {
+  return baseSnakeCase(s).toUpperCase();
 }
