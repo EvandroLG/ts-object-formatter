@@ -1,4 +1,5 @@
-import { lowerCamelCase, lowerSnakeCase, upperSnakeCase } from './filters';
+import { lowerSnakeCase, upperSnakeCase } from './snakeCase';
+import { lowerCamelCase } from './camelCase';
 
 type ObjectType = { [key: string]: unknown };
 type FilterType = 'lower_camel_case' | 'lower_snake_case' | 'upper_snake_case';

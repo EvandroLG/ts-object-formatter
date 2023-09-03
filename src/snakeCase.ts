@@ -6,27 +6,6 @@ function isUpperCase(s: string): boolean {
   return s.toUpperCase() === s;
 }
 
-export function lowerCamelCase(s: string): string {
-  const output: Array<string> = [];
-
-  for (let i = 0; i < s.length; i++) {
-    const c = s[i];
-
-    if (!isAlphanumeric(c) && i < s.length - 1) {
-      const next = s[i + 1];
-
-      if (isAlphanumeric(next)) {
-        output.push(output.length ? next.toUpperCase() : next.toLowerCase());
-        i++;
-      }
-    } else if (isAlphanumeric(c)) {
-      output.push(c.toLowerCase());
-    }
-  }
-
-  return output.join('');
-}
-
 function baseSnakeCase(s: string): string {
   const output: Array<string> = [];
 
