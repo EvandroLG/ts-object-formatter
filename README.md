@@ -36,3 +36,19 @@ objectFormatter(map, 'lower_camel_case');
 }
 */
 ```
+
+## API
+
+### objectFormatter
+
+Converts the object keys to camel or snake case.
+
+#### object
+
+Type: `object`
+Object that will be formatted.
+
+#### filter
+
+Type: `lower_camel_case | lower_snake_case`
+Filter that will be applied to convert the object key.

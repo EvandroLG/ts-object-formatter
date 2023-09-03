@@ -4,6 +4,14 @@
   "author": "evandrolg",
   "license": "MIT",
   "description": "A tiny library for formatting object fields in snake case or camel case.",
+  "keywords": [
+    "object",
+    "json",
+    "formatter",
+    "snake_case",
+    "camel_case",
+    "functional"
+  ],
   "type": "module",
   "exports": {
     "require": "./dist/index.cjs",
