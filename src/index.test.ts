@@ -63,4 +63,25 @@ describe('objectFormatter', () => {
       },
     });
   });
+
+  test('format keys in upper camel case', () => {
+    const result = objectFormatter(
+      {
+        userNickname: 'evandrolg',
+        lastPost: '2023-01-01',
+        career: {
+          lastCompanies: ['spotify', 'dazn', 'joyn'],
+        },
+      },
+      'upper_camel_case'
+    );
+
+    expect(result).toMatchObject({
+      UserNickname: 'evandrolg',
+      LastPost: '2023-01-01',
+      Career: {
+        Last_companies: ['spotify', 'dazn', 'joyn'],
+      },
+    });
+  });
 });
