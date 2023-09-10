@@ -67,20 +67,20 @@ describe('objectFormatter', () => {
   test('format keys in upper camel case', () => {
     const result = objectFormatter(
       {
-        userNickname: 'evandrolg',
-        lastPost: '2023-01-01',
+        user_nickname: 'evandrolg',
+        last_post: '2023-01-01',
         career: {
-          lastCompanies: ['spotify', 'dazn', 'joyn'],
+          last_companies: ['spotify', 'dazn', 'joyn'],
         },
       },
       'upper_camel_case'
     );
 
     expect(result).toMatchObject({
-      UserNickname: 'evandrolg',
       LastPost: '2023-01-01',
+      UserNickname: 'evandrolg',
       Career: {
-        Last_companies: ['spotify', 'dazn', 'joyn'],
+        LastCompanies: ['spotify', 'dazn', 'joyn'],
       },
     });
   });
