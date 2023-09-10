@@ -1,6 +1,6 @@
 {
   "name": "ts-object-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "evandrolg",
   "license": "MIT",
   "description": "A tiny library for formatting object fields in snake case or camel case.",
