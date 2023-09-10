@@ -25,7 +25,7 @@ const map = {
   },
 };
 
-objectFormatter(map, 'lower_camel_case');
+objectFormatter(map, 'lowerCamelCase');
 /*
 {
   userNickname: 'evandrolg',
@@ -50,5 +50,5 @@ Object that will be formatted.
 
 #### filter
 
-Type: `lower_camel_case | lower_snake_case`
+Type: `lowerCamelCase | upperCamelCase | lowerSnakeCase | upperSnakeCase`
 Filter that will be applied to convert the object key.

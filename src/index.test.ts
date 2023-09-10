@@ -10,7 +10,7 @@ describe('objectFormatter', () => {
           last_companies: ['spotify', 'dazn', 'joyn'],
         },
       },
-      'lower_camel_case'
+      'lowerCamelCase'
     );
 
     expect(result).toMatchObject({
@@ -31,7 +31,7 @@ describe('objectFormatter', () => {
           lastCompanies: ['spotify', 'dazn', 'joyn'],
         },
       },
-      'lower_snake_case'
+      'lowerSnakeCase'
     );
 
     expect(result).toMatchObject({
@@ -52,7 +52,7 @@ describe('objectFormatter', () => {
           lastCompanies: ['spotify', 'dazn', 'joyn'],
         },
       },
-      'upper_snake_case'
+      'upperSnakeCase'
     );
 
     expect(result).toMatchObject({
@@ -73,7 +73,7 @@ describe('objectFormatter', () => {
           last_companies: ['spotify', 'dazn', 'joyn'],
         },
       },
-      'upper_camel_case'
+      'upperCamelCase'
     );
 
     expect(result).toMatchObject({

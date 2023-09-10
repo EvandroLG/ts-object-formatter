@@ -3,10 +3,10 @@ import { lowerCamelCase, upperCamelCase } from './camelCase';
 
 type ObjectType = { [key: string]: unknown };
 type FilterType =
-  | 'lower_camel_case'
-  | 'upper_camel_case'
-  | 'lower_snake_case'
-  | 'upper_snake_case';
+  | 'lowerCamelCase'
+  | 'upperCamelCase'
+  | 'lowerSnakeCase'
+  | 'upperSnakeCase';
 
 function isObject(o: unknown): boolean {
   return typeof o === 'object' && !Array.isArray(o);
@@ -16,16 +16,16 @@ function applyFilter(key: string, filter: FilterType): string {
   let result: string;
 
   switch (filter) {
-    case 'lower_camel_case':
+    case 'lowerCamelCase':
       result = lowerCamelCase(key);
       break;
-    case 'upper_camel_case':
+    case 'upperCamelCase':
       result = upperCamelCase(key);
       break;
-    case 'lower_snake_case':
+    case 'lowerSnakeCase':
       result = lowerSnakeCase(key);
       break;
-    case 'upper_snake_case':
+    case 'upperSnakeCase':
       result = upperSnakeCase(key);
       break;
   }
