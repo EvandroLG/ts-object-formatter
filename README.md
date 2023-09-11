@@ -45,10 +45,10 @@ Converts the object keys to camel or snake case.
 
 #### object
 
-Type: `object`
+Type: `object`<be>
 Object that will be formatted.
 
 #### filter
 
-Type: `lowerCamelCase | upperCamelCase | lowerSnakeCase | upperSnakeCase`
+Type: `lowerCamelCase | upperCamelCase | lowerSnakeCase | upperSnakeCase`<be>
 Filter that will be applied to convert the object key.
